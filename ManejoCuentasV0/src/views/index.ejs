@@ -1,0 +1,84 @@
+<% include partials/_header %> <!-- Importa el header, ya que este nunca va a cambiar -->
+
+	
+<div class="container">
+	<div class="row">
+	<!-- FORM -->
+		<div id="div1" class="col-md-5"> <!-- col-md-5 se encarga del largo de la carta -->
+			<div class="card">
+				<div class="card-body">
+					<form action="/add" method="post">
+						<div class="form-group">
+							<input type="text" name="nombre" placeholder="Ingrese el nombre" class="form-control">  
+						</div>
+						<div class="form-group">
+							 <input type="text" name="cedula" placeholder="Ingrese la cédula" class="form-control">
+						</div>
+						<div class="form-group">
+							 <input type="text" name="celular" placeholder="Ingrese el celular" class="form-control">
+						</div>
+						<div class="form-group">
+							 <input type="number" name="saldo" placeholder="Ingrese el monto a consignar" class="form-control">
+						</div>
+						<div class="form-group">
+							 <input type="text" name="fecha" placeholder="Ingrese la fecha: DD/MM/AAAA" class="form-control">
+						</div>
+						<input type="submit" value="Agregar">
+						<!-- <button type="button" class="btn btn-primary btn-block" >Add</button> No sé porqué no sirve :c-->
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div id="div3" class="col-md-10">
+				<form action="">
+					<div class="form-group">
+						<input type="text" name="consultar" placeholder="Ingrese número de cédula" size="30">
+					</div>
+					<div class="form-group">
+						<a href="" class="btn btn-info"> Consultar </a>
+					</div>
+				</form>
+			</div>
+		</div>	
+
+		<!-- Data base verification -->
+		<div class="container">
+			<div class="row">
+				<div id="div2" class="col-md-10">
+					<table class="table table-bordered table-hover"> 
+						<thead>
+							<tr> 
+								<th> N° </th>
+								<th> Nombre </th>
+								<th> Cédula </th>
+								<th> Celular </th>
+								<th> Saldo </th>
+								<th> Última consignación </th>
+								<th> Operaciones </th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% for(var i = 0; i<useris.length; i++){ %>
+								<tr>
+									<td> <%= i+1 %> </td>
+									<td> <%= useris[i].nombre %> </td>
+									<td> <%= useris[i].cedula %> </td>
+									<td> <%= useris[i].celular %> </td>
+									<td> <%= useris[i].saldo %> </td>
+									<td> <%= useris[i].fecha %> </td>
+									<td> 
+										<a href="/delete/<%= useris[i]._id %>" class="btn btn-danger"> Eliminar </a> 
+										<a href="" class="btn btn-info"> Listar </a>
+									</td>
+								</tr>
+							<% } %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+</div>
+
+<% include partials/_footer %>
