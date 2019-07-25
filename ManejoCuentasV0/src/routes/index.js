@@ -6,11 +6,12 @@ const Useri = require('../models/usuarios');
 //Esta función hace consultas en la base de datos
 router.get('/', async (req, res) => { //Atiende las peticiones del cliente
 	const useris = await Useri.find(); //Async y await porque debe consultar en la base y esperar por el resultado
-	console.log(useris);
+
 	res.render('index', {
 		useris
 	});
 });
+
 
 router.post('/add', async (req, res) => {
 	

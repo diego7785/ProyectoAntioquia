@@ -6,7 +6,7 @@ const usersSchema = new Schema({ //Similar a crear una tabla en SQL
 	cedula: String,
 	celular: String,
 	saldo: Number,
-	fecha: String
+	fecha: Date
 });
 
 module.exports = mongoose.model('Usuarios', usersSchema); //Permite exportar "la tabla" para su uso en otro código
