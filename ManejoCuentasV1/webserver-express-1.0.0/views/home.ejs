@@ -1,0 +1,43 @@
+<!--{{> head }}-->
+<% include parciales/head %> <!-- Importa el header, ya que este nunca va a cambiar -->
+<% include parciales/navbar %> <!-- Importa el navbar, ya que este nunca va a cambiar -->
+
+
+    <!--{{> navbar }}-->
+
+
+
+<div class="container">
+    <div class="row">
+    <!-- FORM -->
+        <div id="div1" class="col-md-5"> <!-- col-md-5 se encarga del largo de la carta -->
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="form-group">
+                            <input type="text" name="nombre" placeholder="Ingrese el nombre" class="form-control">  
+                        </div>
+                        <div class="form-group">
+                             <input type="text" name="cedula" placeholder="Ingrese la cédula" class="form-control">
+                        </div>
+                        <div class="form-group">
+                             <input type="text" name="celular" placeholder="Ingrese el celular" class="form-control">
+                        </div>
+                        <div class="form-group">
+                             <input type="number" name="saldo" placeholder="Ingrese el monto a consignar" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input name="fecha" type="date">
+                             <!-- <input type="text" name="fecha" placeholder="Ingrese la fecha: DD/MM/AAAA" class="form-control"> -->
+                        </div>
+                        <input type="submit" value="Agregar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>         
+</div>
+
+
+<% include parciales/footer %> <!-- Importa el footer, ya que este nunca va a cambiar -->
+<!--{{> footer }}-->

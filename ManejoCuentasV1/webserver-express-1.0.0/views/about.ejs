@@ -1,0 +1,60 @@
+<% include parciales/head %> <!-- Importa el header, ya que este nunca va a cambiar -->
+<% include parciales/navbar %> <!-- Importa el navbar, ya que este nunca va a cambiar -->
+
+
+ <!-- Data base verification -->
+        <div class="container">
+            <div class="row">
+                <div id="div2" class="col-md-10">
+                    <table class="table table-bordered table-hover"> 
+                        <thead>
+                            <tr> 
+                                <th> N° </th>
+                                <th> Nombre </th>
+                                <th> Cédula </th>
+                                <th> Celular </th>
+                                <th> Saldo </th>
+                                <th> Última consignación </th>
+                                <th> Operaciones </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% for(var i = 0; i<useris.length; i++){ %>
+                                <tr>
+                                    <td> <%= i+1 %> </td>
+                                    <td> <%= useris[i].nombre %> </td>
+                                    <td> <%= useris[i].cedula %> </td>
+                                    <td> <%= useris[i].celular %> </td>
+                                    <td> <%= useris[i].saldo %> </td>
+                                    <td> <%/*= useris[i].fecha.toLocaleDateString()*/ %> </td>
+                                    <td> 
+                                        <a href="/delete/<%= useris[i]._id %>" class="btn btn-danger"> Eliminar </a> 
+                                        <a href="" class="btn btn-info"> Listar </a>
+                                    </td>
+                                </tr>
+                            <% } %>
+                        </tbody> 
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+<!--<div class="row">
+			<div id="div3" class="col-md-10">
+				<form action="" method="">
+					<div class="form-group">
+						<input type="text" name="consultar" placeholder="Ingrese número de cédula" size="30">
+					</div>
+					<div class="form-group">
+						<a href="../consulta.html" class="btn btn-info">Consultar</a>
+					</div>
+				</form>
+			</div>
+		</div>-->
+
+  
+
+
+
+<% include parciales/footer %> <!-- Importa el footer, ya que este nunca va a cambiar -->
